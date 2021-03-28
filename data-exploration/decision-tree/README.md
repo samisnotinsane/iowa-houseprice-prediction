@@ -23,4 +23,8 @@ The feature `OverallQual` is very specific to our particular dataset and we assu
 
 We now look at how the tree partitions 1st floor and 2nd floor size of property with respect to `SalePrice`.
 
-![a](images/1-2-flr-target-space.png)
+![Partitions made in 3 dimensional space](images/1-2-flr-target-space.png)
+
+Analysing feature importance with a decision tree resulted in all except 3 of the features being 0. We show only features with non-zero importance in the following figure. This shows that the overall material and finish of the house (`OverallQual`) is far more important than ground floor living space (`GrLivArea`), which in turn is slightly more important than second floor living space (`2ndFlrSF`).
+
+![Feature importance](images/nonzero_feature_importances.png)
