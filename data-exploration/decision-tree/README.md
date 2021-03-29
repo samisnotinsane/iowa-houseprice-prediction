@@ -28,3 +28,5 @@ We now look at how the tree partitions 1st floor and 2nd floor size of property 
 Analysing feature importance with a decision tree resulted in all except 3 of the features being 0. We show only features with non-zero importance in the following figure. This shows that the overall material and finish of the house (`OverallQual`) is far more important than ground floor living space (`GrLivArea`), which in turn is slightly more important than second floor living space (`2ndFlrSF`).
 
 ![Feature importance](images/nonzero_feature_importances.png)
+
+Return to [Data Exploration](../readme.md).
