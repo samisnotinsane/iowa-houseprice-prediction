@@ -16,4 +16,14 @@ To avoid these effects and for comparison, we use an alternate method of computi
 
 ![Permutation importance](images/permutation_importance.png)
 
+As it appears in both of the figures above, permutation importance and random forest are in agreement. This is explained by the fact that we are performing a regression task, hence, the random forest feature importance is being measured by decrease in variance, not mean decrease in impurity, as is the case with classification problems. 
+
+Lastly, we apply SHAP, a model interpreter whose foundations lie in game theory. By using Shapley values, we will explain how much each feature contributes to making a prediction as an indicator of its relative importance. 
+
+As seen in the SHAP summary plot below, the relative feature importance is identical to ones obtained through other methods.
+
+![SHAP summary](images/shap_summary.png)
+
+---
+
 Return to [Data Exploration](../readme.md).
