@@ -20,7 +20,7 @@ As it appears in both of the figures above, permutation importance and random fo
 
 Lastly, we apply SHAP, a model interpreter whose foundations lie in game theory. By using Shapley values, we will explain how much each feature contributes to making a prediction as an indicator of its relative importance. 
 
-As seen in the SHAP summary plot below, the relative feature importance is identical to ones obtained through other methods.
+As seen in the SHAP summary plot below, the relative feature importance is identical to ones obtained through other methods. Features with high SHAP push predicted `SalePrice` to a larger value and features with zero or negative values pull the target value down.
 
 ![SHAP summary](images/shap_summary.png)
 
