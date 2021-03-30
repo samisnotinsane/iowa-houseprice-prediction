@@ -18,11 +18,33 @@ To avoid these effects and for comparison, we use an alternate method of computi
 
 As it appears in both of the figures above, permutation importance and random forest are in agreement. This is explained by the fact that we are performing a regression task, hence, the random forest feature importance is being measured by decrease in variance, not mean decrease in impurity, as is the case with classification problems. 
 
+## Shapley Values
+
 Lastly, we apply SHAP, a model interpreter whose foundations lie in game theory. By using Shapley values, we will explain how much each feature contributes to making a prediction as an indicator of its relative importance. 
 
 As seen in the SHAP summary plot below, the relative feature importance is identical to ones obtained through other methods. Features with high SHAP push predicted `SalePrice` to a larger value and features with zero or negative values pull the target value down.
 
 ![SHAP summary](images/shap_summary.png)
+
+## Mutual Information (MI)
+
+MI from information theory provides us with a metric for measuring the dependency between an input feature and the target. A higher value corresponds to more dependency and 0 means feature and target are independent. Our strategy here is to extract which features have `MI > 0` and show them in the following chart. 
+
+![Mutual Information](images/mi.png)
+
+We note that so far, our top 5 features are:
+
+| Rank   | Feature           | 
+| ------ |:-------------:|
+| 1      | OverallQual |
+| 2      | GrLivArea      | 
+| 3      | TotalBsmtSF     |    
+| 4      | BsmtFinSF1      | 
+| 5      | 1stFlrSF      | 
+
+
+however their relative importance ranking has been different for each technique.
+
 
 ---
 
