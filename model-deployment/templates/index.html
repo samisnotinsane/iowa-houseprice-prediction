@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>House Price Predictor</title>
+  <meta name="description" content="Iowa House Price Predictor">
+  <meta name="author" content="Sameen Islam">
+</head>
+
+<body>
+  <h1>Iowa House Price Predictor</h1>
+  <form action="{{ url_for('main') }}" method="POST" enctype="multipart/form-data">
+      <fieldset>
+          <legend>Input values:</legend>
+          Rate the overall material and finish of the house (1 lowest, 10 highest):
+          <input name="overallqual" type="number" required>
+          <br>
+          <br> Above grade (ground) living area in square feet:
+          <input name="grlivarea" type="number" required>
+          <br>
+          <br> Total square feet of basement area:
+          <input name="totalbsmtsf" type="number" required>
+          <br>
+          <br> Second floor square feet:
+          <input name="secondfloorsf" type="number" required>
+          <br>
+          <br> Size of garage in car capacity:
+          <input name="garagecars" type="number" required>
+          <br>
+          <br>
+          <input type="submit">
+      </fieldset>
+  </form>
+  <br>
+  <div class="result" align="center">
+      {% if result %}
+        {% for variable, value in original_input.items() %}
+            <b>{{ variable }}</b> : {{ value }}
+        {% endfor %}
+        <br>
+        <br> Predicted price of property:
+        <p style="font-size: 14px;">{{ "${:,.2f}".format(result) }}</p>
+      {% endif %}
+  </div>
+</body>
+</html>

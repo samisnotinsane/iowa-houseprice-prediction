@@ -45,6 +45,10 @@ We note that so far, our top 5 features are:
 
 however their relative importance ranking has been different for each technique.
 
+## Recursive Feature Elimination (RFE)
+RFE uses our random forest model. It takes the feature importance values and recursively eliminates features until a predefined fraction of features are remaining. In this case, we choose to keep 50% of our features which results in the following features being kept. 
+
+
 
 ---
 
